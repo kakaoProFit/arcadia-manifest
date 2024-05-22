@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: arcadia-fastapi-service
   labels:
-    app: arcadia-fastapi
+    app: arcadia-api
 spec:
   selector:
-    app: arcadia-fastapi
+    app: arcadia-api
   ports:
     - protocol: TCP
       port: 80
@@ -17,10 +17,10 @@ kind: Service
 metadata:
   name: arcadia-springboot-login-service
   labels:
-    app: arcadia-springboot-login
+    app: arcadia-api
 spec:
   selector:
-    app: arcadia-springboot-login
+    app: arcadia-api
   ports:
     - protocol: TCP
       port: 80
@@ -31,10 +31,10 @@ kind: Service
 metadata:
   name: arcadia-springboot-board-service
   labels:
-    app: arcadia-springboot-board
+    app: arcadia-api
 spec:
   selector:
-    app: arcadia-springboot-board
+    app: arcadia-api
   ports:
     - protocol: TCP
       port: 80
