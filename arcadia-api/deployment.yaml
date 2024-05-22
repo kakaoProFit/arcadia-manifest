@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: arcadia-fastapi
+  labels:
+    app: arcadia-fastapi
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: arcadia-fastapi
+  template:
+    metadata:
+      labels:
+        app: arcadia-fastapi
+    spec:
+      containers:
+      - image: gcu-profit-dev.kr-central-2.kcr.dev/arcadia-nextjs/fastapi:latest
+        name: fastapi
+        ports:
+        - containerPort: 8000
+      imagePullSecrets:
+      - name: kic-registry
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: arcadia-springboot-login
+  labels:
+    app: arcadia-springboot-login
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: arcadia-springboot-login
+  template:
+    metadata:
+      labels:
+        app: arcadia-springboot-login
+    spec:
+      containers:
+      - image: gcu-profit-dev.kr-central-2.kcr.dev/arcadia-nextjs/springboot-login:latest
+        name: springboot-login
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: kic-registry
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: arcadia-springboot-board
+  labels:
+    app: arcadia-springboot-board
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: arcadia-springboot-board
+  template:
+    metadata:
+      labels:
+        app: arcadia-springboot-board
+    spec:
+      containers:
+      - image: gcu-profit-dev.kr-central-2.kcr.dev/arcadia-nextjs/springboot-board:latest
+        name: springboot-board
+        ports:
+        - containerPort: 8081
+      imagePullSecrets:
+      - name: kic-registry
+---

@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: arcadia-fastapi-service
+  labels:
+    app: arcadia-fastapi
+spec:
+  selector:
+    app: arcadia-fastapi
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: arcadia-springboot-login-service
+  labels:
+    app: arcadia-springboot-login
+spec:
+  selector:
+    app: arcadia-springboot-login
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: arcadia-springboot-board-service
+  labels:
+    app: arcadia-springboot-board
+spec:
+  selector:
+    app: arcadia-springboot-board
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8081
+---
