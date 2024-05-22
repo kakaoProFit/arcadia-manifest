@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: "https://github.com/kakaoProFit/arcadia-manifest"
     targetRevision: main
-    path: "/arcadia-fe"
+    path: "arcadia-fe"
   destination:
     server: "https://kubernetes.default.svc"
     namespace: default
