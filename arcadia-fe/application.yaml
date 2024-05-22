@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: arcadia-nextjs
+  name: arcadia-fe
   namespace: argocd
 spec:
   project: default
