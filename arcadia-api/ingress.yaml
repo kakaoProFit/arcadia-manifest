@@ -3,7 +3,6 @@ kind: Ingress
 metadata:
   name: arcadia-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: "letsencrypt-staging"
 spec:
@@ -11,28 +10,21 @@ spec:
   - host: arcadia-api.p-e.kr
     http:
       paths:
-      - path: /fastapi
+      - path: /
         pathType: Prefix
         backend:
           service:
             name: arcadia-fastapi-service
             port:
               number: 80
-      - path: /fastapi/docs
-        pathType: Prefix
-        backend:
-          service:
-            name: arcadia-fastapi-service
-            port:
-              number: 80
-      - path: /login
+      - path: /
         pathType: Prefix
         backend:
           service:
             name: arcadia-springboot-login-service
             port:
               number: 80
-      - path: /board
+      - path: /
         pathType: Prefix
         backend:
           service:
