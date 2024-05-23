@@ -19,6 +19,7 @@ spec:
         name: fastapi
         ports:
         - containerPort: 8000
+          name: http
       imagePullSecrets:
       - name: kic-registry
 ---
@@ -43,6 +44,7 @@ spec:
         name: springboot-login
         ports:
         - containerPort: 8080
+          name: http
       imagePullSecrets:
       - name: kic-registry
 ---
@@ -67,6 +69,7 @@ spec:
         name: springboot-board
         ports:
         - containerPort: 8081
+          name: http
       imagePullSecrets:
       - name: kic-registry
 ---
