@@ -8,8 +8,7 @@ spec:
   selector:
     app: arcadia-api
   ports:
-    - name: http
-      protocol: TCP
+    - protocol: TCP
       port: 80
       targetPort: 8000
 ---
@@ -23,8 +22,7 @@ spec:
   selector:
     app: arcadia-api
   ports:
-    - name: http
-      protocol: TCP
+    - protocol: TCP
       port: 80
       targetPort: 8080
 ---
@@ -38,8 +36,7 @@ spec:
   selector:
     app: arcadia-api
   ports:
-    - name: http
-      protocol: TCP
+    - protocol: TCP
       port: 80
       targetPort: 8081
 ---
