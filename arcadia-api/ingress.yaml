@@ -16,19 +16,22 @@ spec:
   - host: arcadia-api.p-e.kr
     http:
       paths:
-      - pathType: Prefix
+      - path: /fastapi
+        pathType: Prefix
         backend:
           service:
             name: arcadia-fastapi-service
             port:
               number: 80
-      - pathType: Prefix
+      - path: /login
+        pathType: Prefix
         backend:
           service:
             name: arcadia-springboot-login-service
             port:
               number: 80
-      - pathType: Prefix
+      - path: /board
+        pathType: Prefix
         backend:
           service:
             name: arcadia-springboot-board-service
