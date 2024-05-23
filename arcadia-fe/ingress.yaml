@@ -9,9 +9,6 @@ metadata:
     cert-manager.io/cluster-issuer: "letsencrypt-staging"
     # nginx.ingress.kubernetes.io/backend-protocol: HTTPS
 spec:
-  selector:
-    matchLabels:
-      app: arcadia-fe
   rules:
   - host: arcadia.p-e.kr
     http:
