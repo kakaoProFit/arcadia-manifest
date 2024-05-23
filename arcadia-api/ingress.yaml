@@ -2,11 +2,16 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: arcadia-ingress
+  labels:
+    app: arcadia-api
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: "letsencrypt-staging"
 spec:
+  selector:
+    matchLabels:
+      app: arcadia-api
   rules:
   - host: arcadia-api.p-e.kr
     http:
