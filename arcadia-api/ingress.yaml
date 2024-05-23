@@ -41,4 +41,5 @@ spec:
 status:
   loadBalancer:
     ingress:
-      - {}
+      - hostname: >-
+          k8s-ingress-ingress-2b8e92a4cf-4d2a3b04886140f1b961a25856211401.ke.kr-central-2.kakaocloud.com
