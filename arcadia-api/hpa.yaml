@@ -1,4 +1,4 @@
-apiVersion: autoscaling/v2beta2
+apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: arcadia-fastapi-hpa
@@ -19,7 +19,7 @@ spec:
         type: Utilization
         averageUtilization: 70  # 평균 CPU 사용률이 50%가 되도록 조정
 ---
-apiVersion: autoscaling/v2beta2
+apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: arcadia-springboot-login-hpa
@@ -40,7 +40,7 @@ spec:
         type: Utilization
         averageUtilization: 70  # 평균 CPU 사용률이 50%가 되도록 조정
 ---
-apiVersion: autoscaling/v2beta2
+apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: arcadia-springboot-board-hpa
