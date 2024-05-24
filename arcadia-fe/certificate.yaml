@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: arcadia-p-e-kr-tls
+  namespace: default
+  labels:
+    app: arcadia-fe
+spec:
+  secretName: arcadia-p-e-kr-tls
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: arcadia.p-e.kr  # 인증서의 주 서브젝트 이름
+  dnsNames:
+  - arcadia.p-e.kr
