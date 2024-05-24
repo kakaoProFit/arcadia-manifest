@@ -1,0 +1,20 @@
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: arcadia-fe-hpa
+  labels:
+    app: arcadia-fe
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: arcadia-fe
+  minReplicas: 3  # 최소 Replica 수
+  maxReplicas: 5  # 최대 Replica 수
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70  # 평균 CPU 사용률이 50%가 되도록 조정
