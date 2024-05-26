@@ -1,0 +1,45 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: arcadia-ingress
+  labels:
+    app: arcadia-api
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: istio
+    cert-manager.io/cluster-issuer: "letsencrypt-staging"
+spec:
+  rules:
+  - host: arcadia-api.p-e.kr
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: arcadia-fastapi-service
+            port:
+              number: 80
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: arcadia-springboot-login-service
+            port:
+              number: 80
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: arcadia-springboot-board-service
+            port:
+              number: 80
+  tls:
+    - hosts:
+      - arcadia-api.p-e.kr
+      secretName: arcadia-api-tls
+status:
+  loadBalancer:
+    ingress:
+      - hostname: >-
+          k8s-ingress-ingress-2b8e92a4cf-4d2a3b04886140f1b961a25856211401.ke.kr-central-2.kakaocloud.com
