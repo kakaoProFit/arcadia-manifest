@@ -6,7 +6,7 @@ metadata:
     app: arcadia-fe
 spec:
   scaleTargetRef:
-    apiVersion: apps/v1
+    apiVersion: argoproj.io/v1alpha1
     kind: Rollout
     name: arcadia-fe
   minReplicas: 2  # 최소 Replica 수
