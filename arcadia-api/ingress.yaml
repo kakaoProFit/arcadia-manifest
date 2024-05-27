@@ -20,7 +20,14 @@ spec:
             name: arcadia-fastapi-active
             port:
               number: 80
-      - path: /
+      - path: /auth
+        pathType: Prefix
+        backend:
+          service:
+            name: arcadia-springboot-login-active
+            port:
+              number: 80
+      - path: /mongo
         pathType: Prefix
         backend:
           service:
