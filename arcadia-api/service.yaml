@@ -51,30 +51,30 @@ spec:
       targetPort: 8080
   type: ClusterIP
 
----
+# ---
 
-apiVersion: v1
-kind: Service
-metadata:
-  name: arcadia-springboot-board-active
-spec:
-  selector:
-    app: arcadia-api
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 8081
-  type: ClusterIP
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: arcadia-springboot-board-preview
-spec:
-  selector:
-    app: arcadia-api
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 8081
-  type: ClusterIP
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: arcadia-springboot-board-active
+# spec:
+#   selector:
+#     app: arcadia-api
+#   ports:
+#     - protocol: TCP
+#       port: 80
+#       targetPort: 8081
+#   type: ClusterIP
+# ---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: arcadia-springboot-board-preview
+# spec:
+#   selector:
+#     app: arcadia-api
+#   ports:
+#     - protocol: TCP
+#       port: 80
+#       targetPort: 8081
+#   type: ClusterIP
