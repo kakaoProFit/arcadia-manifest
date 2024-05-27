@@ -1,23 +1,23 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: arcadia-fe
-  labels:
-    app: arcadia-fe
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: arcadia-fe
-  template:
-    metadata:
-      labels:
-        app: arcadia-fe
-    spec:
-      containers:
-      - image: gcu-profit-dev.kr-central-2.kcr.dev/arcadia-nextjs/arcadia-fe:latest
-        name: arcadia-fe
-        ports:
-        - containerPort: 3000
-      imagePullSecrets:
-      - name: kic-registry
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: arcadia-fe
+#   labels:
+#     app: arcadia-fe
+# spec:
+#   replicas: 3
+#   selector:
+#     matchLabels:
+#       app: arcadia-fe
+#   template:
+#     metadata:
+#       labels:
+#         app: arcadia-fe
+#     spec:
+#       containers:
+#       - image: gcu-profit-dev.kr-central-2.kcr.dev/arcadia-nextjs/arcadia-fe:latest
+#         name: arcadia-fe
+#         ports:
+#         - containerPort: 3000
+#       imagePullSecrets:
+#       - name: kic-registry
