@@ -101,23 +101,23 @@ spec:
           type: Utilization
           averageUtilization: 80
 
----
+# ---
 
-apiVersion: autoscaling/v2
-kind: HorizontalPodAutoscaler
-metadata:
-  name: arcadia-springboot-board-hpa
-spec:
-  scaleTargetRef:
-    apiVersion: argoproj.io/v1alpha1
-    kind: Rollout
-    name: arcadia-springboot-board
-  minReplicas: 2
-  maxReplicas: 5
-  metrics:
-    - type: Resource
-      resource:
-        name: cpu
-        target:
-          type: Utilization
-          averageUtilization: 80
+# apiVersion: autoscaling/v2
+# kind: HorizontalPodAutoscaler
+# metadata:
+#   name: arcadia-springboot-board-hpa
+# spec:
+#   scaleTargetRef:
+#     apiVersion: argoproj.io/v1alpha1
+#     kind: Rollout
+#     name: arcadia-springboot-board
+#   minReplicas: 2
+#   maxReplicas: 5
+#   metrics:
+#     - type: Resource
+#       resource:
+#         name: cpu
+#         target:
+#           type: Utilization
+#           averageUtilization: 80
