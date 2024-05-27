@@ -13,7 +13,7 @@ spec:
     metadata:
       labels:
         app: arcadia-api
-        version: preview
+        version: active
     spec:
       containers:
         - image: gcu-profit-dev.kr-central-2.kcr.dev/arcadia-nextjs/fastapi:latest
@@ -44,7 +44,7 @@ spec:
     metadata:
       labels:
         app: arcadia-api
-        version: preview
+        version: active
     spec:
       containers:
         - image: gcu-profit-dev.kr-central-2.kcr.dev/arcadia-nextjs/springboot-login:latest
@@ -75,7 +75,7 @@ spec:
     metadata:
       labels:
         app: arcadia-api
-        version: preview
+        version: active
     spec:
       containers:
         - image: gcu-profit-dev.kr-central-2.kcr.dev/arcadia-nextjs/springboot-board:latest
