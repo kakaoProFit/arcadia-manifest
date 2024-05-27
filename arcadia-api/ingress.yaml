@@ -13,7 +13,7 @@ spec:
   - host: arcadia-api.p-e.kr
     http:
       paths:
-      - path: /ai(/|$)(.*)
+      - path: /(/|$)(.*)
         pathType: ImplementationSpecific
         backend:
           service:
