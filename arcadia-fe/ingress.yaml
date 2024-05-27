@@ -17,7 +17,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: arcadia-fe
+            name: arcadia-fe-active
             port:
               number: 80
   tls:

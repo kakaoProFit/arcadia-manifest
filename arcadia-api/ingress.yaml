@@ -17,21 +17,21 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: arcadia-fastapi-service
+            name: arcadia-fastapi-active
             port:
               number: 80
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: arcadia-springboot-login-service
+            name: arcadia-springboot-login-active
             port:
               number: 80
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: arcadia-springboot-board-service
+            name: arcadia-springboot-board-active
             port:
               number: 80
   tls:
@@ -42,4 +42,4 @@ status:
   loadBalancer:
     ingress:
       - hostname: >-
-          k8s-ingress-ingress-2b8e92a4cf-4d2a3b04886140f1b961a25856211401.ke.kr-central-2.kakaocloud.com
+          k8s-ingress-ingress-70d02f223c-4d2a3b04886140f1b961a25856211401.ke.kr-central-2.kakaocloud.com

@@ -7,9 +7,9 @@ metadata:
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
-    kind: Deployment
+    kind: Rollout
     name: arcadia-fe
-  minReplicas: 3  # 최소 Replica 수
+  minReplicas: 2  # 최소 Replica 수
   maxReplicas: 5  # 최대 Replica 수
   metrics:
   - type: Resource
@@ -17,4 +17,4 @@ spec:
       name: cpu
       target:
         type: Utilization
-        averageUtilization: 70  # 평균 CPU 사용률이 50%가 되도록 조정
+        averageUtilization: 80  # 평균 CPU 사용률이 50%가 되도록 조정

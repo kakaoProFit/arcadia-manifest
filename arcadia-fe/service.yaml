@@ -1,10 +1,26 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: arcadia-fe
+  name: arcadia-fe-active
 spec:
   selector:
     app: arcadia-fe
+    version: active
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: arcadia-fe-preview
+spec:
+  selector:
+    app: arcadia-fe
+    version: preview
   ports:
     - name: http
       protocol: TCP

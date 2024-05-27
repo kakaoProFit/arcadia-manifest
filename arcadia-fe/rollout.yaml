@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: arcadia-fe
+  labels:
+    app: arcadia-fe
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: arcadia-fe
+  template:
+    metadata:
+      labels:
+        app: arcadia-fe
+        version: preview
+    spec:
+      containers:
+        - image: gcu-profit-dev.kr-central-2.kcr.dev/arcadia-nextjs/arcadia-fe:latest
+          name: arcadia-fe
+          ports:
+            - containerPort: 3000
+      imagePullSecrets:
+        - name: kic-registry
+  strategy:
+    blueGreen:
+      activeService: arcadia-fe-active
+      previewService: arcadia-fe-preview
+      autoPromotionEnabled: true
