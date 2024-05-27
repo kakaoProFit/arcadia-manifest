@@ -16,7 +16,6 @@ spec:
     spec:
       containers:
         - image: gcu-profit-dev.kr-central-2.kcr.dev/arcadia-nextjs/fastapi:35
-          tag: 31
           name: fastapi
           ports:
             - containerPort: 8000
