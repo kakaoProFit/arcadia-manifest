@@ -13,7 +13,6 @@ spec:
     metadata:
       labels:
         app: arcadia-fe
-        version: active
     spec:
       containers:
         - image: gcu-profit-dev.kr-central-2.kcr.dev/arcadia-nextjs/arcadia-fe:latest
