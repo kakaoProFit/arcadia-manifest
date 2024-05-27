@@ -15,7 +15,8 @@ spec:
         app: arcadia-api
     spec:
       containers:
-        - image: gcu-profit-dev.kr-central-2.kcr.dev/arcadia-nextjs/springboot-board:latest
+        - image: gcu-profit-dev.kr-central-2.kcr.dev/arcadia-nextjs/springboot-board
+          tag: latest
           name: springboot-board
           ports:
             - containerPort: 8081

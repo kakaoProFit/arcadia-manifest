@@ -15,7 +15,8 @@ spec:
         app: arcadia-fe
     spec:
       containers:
-        - image: gcu-profit-dev.kr-central-2.kcr.dev/arcadia-nextjs/arcadia-fe:latest
+        - image: gcu-profit-dev.kr-central-2.kcr.dev/arcadia-nextjs/arcadia-fe
+          tag: 25
           name: arcadia-fe
           ports:
             - containerPort: 3000
