@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: arcadia-springboot-login
+  labels:
+    app: arcadia-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: arcadia-api
+  template:
+    metadata:
+      labels:
+        app: arcadia-api
+    spec:
+      containers:
+        - image: gcu-profit-dev.kr-central-2.kcr.dev/arcadia-nextjs/springboot-login:latest
+          name: springboot-login
+          ports:
+            - containerPort: 8080
+              name: http
+      imagePullSecrets:
+        - name: kic-registry
+  strategy:
+    blueGreen:
+      activeService: arcadia-springboot-login-active
+      previewService: arcadia-springboot-login-preview
+      autoPromotionEnabled: true
