@@ -14,21 +14,21 @@ spec:
     http:
       paths:
       - path: /ai(/|$)(.*)
-        pathType: Prefix
+        pathType: ImplementationSpecific
         backend:
           service:
             name: arcadia-fastapi-active
             port:
               number: 80
       - path: /login(/|$)(.*)
-        pathType: Prefix
+        pathType: ImplementationSpecific
         backend:
           service:
             name: arcadia-springboot-login-active
             port:
               number: 80
       - path: /board(/|$)(.*)
-        pathType: Prefix
+        pathType: ImplementationSpecific
         backend:
           service:
             name: arcadia-springboot-board-active
