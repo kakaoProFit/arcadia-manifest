@@ -53,7 +53,7 @@
 # metadata:
 #   name: arcadia-springboot-board
 #   labels:
-#     app: arcadia-api
+#     app: arcadia-apiㅈ
 # spec:
 #   replicas: 3
 #   selector:
