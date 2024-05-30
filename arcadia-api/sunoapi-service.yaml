@@ -1,7 +1,22 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: sunoapi-service
+  name: sunoapi-service-active
+  labels:
+    app: arcadia-api
+spec:
+  selector:
+    app: sunoapi
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sunoapi-service-preview
   labels:
     app: arcadia-api
 spec:

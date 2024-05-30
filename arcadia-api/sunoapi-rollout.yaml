@@ -16,13 +16,13 @@ spec:
     spec:
       containers:
         - image: gcu-profit-dev.kr-central-2.kcr.dev/arcadia-nextjs/sunoapi:41
-          name: arcadia-fe
+          name: sunoapi
           ports:
             - containerPort: 3000
       imagePullSecrets:
         - name: kic-registry
   strategy:
     blueGreen:
-      activeService: arcadia-fe-active
-      previewService: arcadia-fe-preview
+      activeService: sunoapi-service-active
+      previewService: sunoapi-service-preview
       autoPromotionEnabled: true
