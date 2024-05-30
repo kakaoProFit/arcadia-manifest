@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: sunoapi
+  labels:
+    app: arcadia-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: arcadia-api
+  template:
+    metadata:
+      labels:
+        app: arcadia-api
+    spec:
+      containers:
+        - image: gcu-profit-dev.kr-central-2.kcr.dev/arcadia-nextjs/sunoapi:41
+          name: arcadia-fe
+          ports:
+            - containerPort: 3000
+      imagePullSecrets:
+        - name: kic-registry
+  strategy:
+    blueGreen:
+      activeService: arcadia-fe-active
+      previewService: arcadia-fe-preview
+      autoPromotionEnabled: true

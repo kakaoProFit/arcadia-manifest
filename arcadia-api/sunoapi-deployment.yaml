@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: sunoapi-deployment
   labels:
-    app: sunoapi
+    app: arcadia-api
 spec:
   replicas: 1
   selector:
