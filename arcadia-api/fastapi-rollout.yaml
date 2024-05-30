@@ -15,7 +15,7 @@ spec:
         app: arcadia-api
     spec:
       containers:
-        - image: gcu-profit-dev.kr-central-2.kcr.dev/arcadia-nextjs/fastapi:37
+        - image: gcu-profit-dev.kr-central-2.kcr.dev/arcadia-nextjs/fastapi:38
           name: fastapi
           ports:
             - containerPort: 8000
