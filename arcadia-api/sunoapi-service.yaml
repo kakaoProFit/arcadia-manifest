@@ -10,7 +10,7 @@ spec:
   ports:
     - protocol: TCP
       port: 3000
-      targetPort: 3000
+      targetPort: 5601
   type: ClusterIP
 ---
 apiVersion: v1
@@ -25,5 +25,5 @@ spec:
   ports:
     - protocol: TCP
       port: 3000
-      targetPort: 3000
+      targetPort: 5601
   type: ClusterIP
