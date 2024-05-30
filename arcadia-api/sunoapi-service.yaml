@@ -6,7 +6,7 @@ metadata:
     app: arcadia-api
 spec:
   selector:
-    app: sunoapi
+    app: arcadia-api
   ports:
     - protocol: TCP
       port: 3000
@@ -21,7 +21,7 @@ metadata:
     app: arcadia-api
 spec:
   selector:
-    app: sunoapi
+    app: arcadia-api
   ports:
     - protocol: TCP
       port: 3000
