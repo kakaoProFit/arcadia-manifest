@@ -15,7 +15,7 @@ spec:
         app: arcadia-api
     spec:
       containers:
-        - image: gcu-profit-dev.kr-central-2.kcr.dev/arcadia-nextjs/springboot-login:42
+        - image: gcu-profit-dev.kr-central-2.kcr.dev/arcadia-nextjs/springboot-login:43
           name: springboot-login
           ports:
             - containerPort: 8080
