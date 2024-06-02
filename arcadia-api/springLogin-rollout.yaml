@@ -22,11 +22,12 @@ spec:
             - containerPort: 8080
               name: http
           resources:
-            memory: "1024Mi"
-            cpu: "500m"
-          limits:
-            memory: "1024Mi"
-            cpu: "500m"
+            requests:
+              memory: "1024Mi"
+              cpu: "500m"
+            limits:
+              memory: "1024Mi"
+              cpu: "500m"
           env:
           - name: SPRING_REDIS_HOST
             value: redis-master
