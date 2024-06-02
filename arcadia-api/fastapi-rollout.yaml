@@ -21,13 +21,13 @@ spec:
           ports:
             - containerPort: 8000
               name: http
-          # resources:
-          #   requests:
-          #     memory: "512Mi"
-          #     cpu: "2000m"
-          #   limits:
-          #     memory: "512Mi"
-          #     cpu: "2000m"
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
       imagePullSecrets:
         - name: kic-registry
   strategy:
