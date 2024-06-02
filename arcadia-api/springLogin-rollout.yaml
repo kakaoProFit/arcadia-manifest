@@ -24,10 +24,10 @@ spec:
           resources:
             requests:
               memory: "1024Mi"
-              cpu: "1500m"
+              cpu: "1200m"
             limits:
               memory: "1024Mi"
-              cpu: "1500m"
+              cpu: "1200m"
           env:
           - name: SPRING_REDIS_HOST
             value: redis-master
