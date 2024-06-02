@@ -5,7 +5,8 @@ metadata:
   labels:
     app: arcadia-api
 spec:
-  replicas: 2
+  replicas: 3
+  revisionHistoryLimit: 5
   selector:
     matchLabels:
       app: arcadia-api
