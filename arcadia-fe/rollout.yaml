@@ -23,10 +23,10 @@ spec:
           resources:
             requests:
               memory: "1024Mi"
-              cpu: "500m"
+              cpu: "1500m"
             limits:
               memory: "1024Mi"
-              cpu: "500m"
+              cpu: "1500m"
       imagePullSecrets:
         - name: kic-registry
   strategy:
