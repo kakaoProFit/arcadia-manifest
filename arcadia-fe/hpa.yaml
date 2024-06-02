@@ -9,12 +9,31 @@ spec:
     apiVersion: argoproj.io/v1alpha1
     kind: Rollout
     name: arcadia-fe
-  minReplicas: 2  # 최소 Replica 수
-  maxReplicas: 5  # 최대 Replica 수
+  minReplicas: 3
+  maxReplicas: 5
   metrics:
-  - type: Resource
-    resource:
-      name: cpu
-      target:
-        type: Utilization
-        averageUtilization: 80  # 평균 CPU 사용률이 50%가 되도록 조정
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 80
+  behavior:
+    scaleUp:
+      stabilizationWindowSeconds: 300
+      policies:
+      - type: Pods
+        value: 1
+        periodSeconds: 60
+      - type: Percent
+        value: 50
+        periodSeconds: 60
+    scaleDown:
+      stabilizationWindowSeconds: 300
+      policies:
+      - type: Pods
+        value: 1
+        periodSeconds: 60
+      - type: Percent
+        value: 50
+        periodSeconds: 60
