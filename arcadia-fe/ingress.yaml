@@ -23,7 +23,7 @@ spec:
               number: 80
   tls:
     - hosts:
-      - arcadia.
+      - arcadiaprofit.shop
       secretName: arcadiaprofit.shop-tls
 status:
   loadBalancer:
