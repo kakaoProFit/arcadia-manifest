@@ -6,7 +6,7 @@ metadata:
     app: arcadia-fe
   annotations:
     kubernetes.io/ingress.class: nginx
-    cert-manager.io/cluster-issuer: "letsencrypt-staging"
+    # cert-manager.io/cluster-issuer: "letsencrypt-staging"
     # nginx.ingress.kubernetes.io/backend-protocol: HTTPS
 spec:
   rules:
@@ -23,7 +23,7 @@ spec:
   tls:
     - hosts:
       - arcadia.p-e.kr
-      secretName: arcadia-fe-tls
+      secretName: p-e.kr-tls
 status:
   loadBalancer:
     ingress:

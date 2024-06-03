@@ -7,7 +7,7 @@ metadata:
   annotations:
     # nginx.ingress.kubernetes.io/rewrite-target: /$1
     kubernetes.io/ingress.class: nginx
-    cert-manager.io/cluster-issuer: "letsencrypt-staging"
+    # cert-manager.io/cluster-issuer: "letsencrypt-staging"
 spec:
   rules:
   - host: arcadia-api.p-e.kr
@@ -23,7 +23,7 @@ spec:
   tls:
     - hosts:
       - arcadia-api.p-e.kr
-      secretName: arcadia-api-tls
+      secretName: p-e.kr-tls
 status:
   loadBalancer:
     ingress:
@@ -39,7 +39,7 @@ metadata:
   annotations:
     # nginx.ingress.kubernetes.io/rewrite-target: /$1
     kubernetes.io/ingress.class: nginx
-    cert-manager.io/cluster-issuer: "letsencrypt-staging"
+    # cert-manager.io/cluster-issuer: "letsencrypt-staging"
 spec:
   rules:
   - host: arcadia-spring.p-e.kr
@@ -55,7 +55,7 @@ spec:
   tls:
     - hosts:
       - arcadia-spring.p-e.kr
-      secretName: arcadia-api-tls
+      secretName: p-e.kr-tls
 status:
   loadBalancer:
     ingress:
