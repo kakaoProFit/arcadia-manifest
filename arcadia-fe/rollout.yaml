@@ -48,6 +48,11 @@ spec:
                 secretKeyRef:
                   name: arcadia-fe-secrets
                   key: NEXT_PUBLIC_S3_bucketName
+          args:
+            - --NEXT_PUBLIC_S3_accessKeyId=$(NEXT_PUBLIC_S3_accessKeyId)
+            - --NEXT_PUBLIC_S3_secretAccessKey=$(NEXT_PUBLIC_S3_secretAccessKey)
+            - --NEXT_PUBLIC_S3_region=$(NEXT_PUBLIC_S3_region)
+            - --NEXT_PUBLIC_S3_bucketName=$(NEXT_PUBLIC_S3_bucketName)
       imagePullSecrets:
         - name: kic-registry
   strategy:
