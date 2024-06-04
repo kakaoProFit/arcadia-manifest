@@ -27,6 +27,27 @@ spec:
             limits:
               memory: "256Mi"
               cpu: "500m"
+          env:
+            - name: NEXT_PUBLIC_S3_accessKeyId
+              valueFrom:
+                secretKeyRef:
+                  name: arcadia-fe-secrets
+                  key: NEXT_PUBLIC_S3_accessKeyId
+            - name: NEXT_PUBLIC_S3_secretAccessKey
+              valueFrom:
+                secretKeyRef:
+                  name: arcadia-fe-secrets
+                  key: NEXT_PUBLIC_S3_secretAccessKey
+            - name: NEXT_PUBLIC_S3_region
+              valueFrom:
+                secretKeyRef:
+                  name: arcadia-fe-secrets
+                  key: NEXT_PUBLIC_S3_region
+            - name: NEXT_PUBLIC_S3_bucketName
+              valueFrom:
+                secretKeyRef:
+                  name: arcadia-fe-secrets
+                  key: NEXT_PUBLIC_S3_bucketName
       imagePullSecrets:
         - name: kic-registry
   strategy:
