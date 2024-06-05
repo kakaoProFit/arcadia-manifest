@@ -4,11 +4,11 @@ metadata:
   name: grafana-ingress
   namespace: monitoring
   annotations:
-    kubernetes.io/ingress.class: nginx
     # cert-manager.io/cluster-issuer: "letsencrypt-staging"
     # nginx.ingress.kubernetes.io/backend-protocol: HTTPS
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
+  ingressClassName: nginx
   rules:
   - host: grafana.arcadiaprofit.shop
     http:
@@ -36,11 +36,11 @@ metadata:
   name: argocd-ingress
   namespace: argocd
   annotations:
-    kubernetes.io/ingress.class: nginx
     # cert-manager.io/cluster-issuer: "letsencrypt-staging"
     # nginx.ingress.kubernetes.io/backend-protocol: HTTPS
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
+  ingressClassName: nginx
   rules:
   - host: argocd.arcadiaprofit.shop
     http:
@@ -67,11 +67,11 @@ kind: Ingress
 metadata:
   name: elastic-ingress
   annotations:
-    kubernetes.io/ingress.class: nginx
     # cert-manager.io/cluster-issuer: "letsencrypt-staging"
     # nginx.ingress.kubernetes.io/backend-protocol: HTTPS
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
+  ingressClassName: nginx
   rules:
   - host: kibana.arcadiaprofit.shop
     http:
