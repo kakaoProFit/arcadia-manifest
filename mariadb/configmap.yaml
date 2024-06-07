@@ -1,0 +1,34 @@
+# master configmap
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mariadb-master
+  labels:
+    app: mariadb-master
+data:
+  master.cnf: |
+    [mysqld]
+    server-id=1
+    log-bin=mysql-bin
+    binlog-format=row
+    skip-name-resolve
+    # other configurations for master
+
+---
+
+# slave configmap
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mariadb-slave
+  labels:
+    app: mariadb-slave
+data:
+  slave.cnf: |
+    [mysqld]
+    server-id=2
+    relay-log=relay-bin
+    log-bin=mysql-bin
+    read-only=1
+    skip-name-resolve
+    # other configurations for slave

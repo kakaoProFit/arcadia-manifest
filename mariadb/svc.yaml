@@ -1,0 +1,29 @@
+# master service
+apiVersion: v1
+kind: Service
+metadata:
+  name: mariadb-master
+  labels:
+    app: mariadb-master
+spec:
+  ports:
+  - port: 3306
+    name: mariadb
+  clusterIP: None
+  selector:
+    app: mariadb-master
+---
+# slave service
+apiVersion: v1
+kind: Service
+metadata:
+  name: mariadb-slave
+  labels:
+    app: mariadb-slave
+spec:
+  ports:
+  - port: 3306
+    name: mariadb
+  clusterIP: None
+  selector:
+    app: mariadb-slave
