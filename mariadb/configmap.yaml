@@ -1,34 +1,27 @@
-# master configmap
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: mariadb-master
-  labels:
-    app: mariadb-master
+  name: mariadb-config
 data:
   master.cnf: |
     [mysqld]
     server-id=1
     log-bin=mysql-bin
-    binlog-format=row
-    skip-name-resolve
-    # other configurations for master
-
----
-
-# slave configmap
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: mariadb-slave
-  labels:
-    app: mariadb-slave
-data:
+    binlog-ignore-db=mysql
+    binlog-ignore-db=information_schema
+    binlog-ignore-db=performance_schema
+    binlog-ignore-db=sys
+    binlog_format=row
+    default-authentication-plugin=mysql_native_password
   slave.cnf: |
     [mysqld]
     server-id=2
-    relay-log=relay-bin
+    relay-log=relay-log-bin
     log-bin=mysql-bin
-    read-only=1
-    skip-name-resolve
-    # other configurations for slave
+    read_only=1
+    binlog-ignore-db=mysql
+    binlog-ignore-db=information_schema
+    binlog-ignore-db=performance_schema
+    binlog-ignore-db=sys
+    binlog_format=row
+    default-authentication-plugin=mysql_native_password
