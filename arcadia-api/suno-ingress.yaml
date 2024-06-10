@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: arcadia-api
+  labels:
+    app: arcadia-api
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    # cert-manager.io/cluster-issuer: "letsencrypt-staging"
+    # nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  rules:
+  - host: suno.arcadiaprofit.shop
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: sunoapi-service-active
+            port:
+              number: 3000
+  tls:
+    - hosts:
+      - suno.arcadiaprofit.shop
+      secretName: suno.arcadiaprofit.shop-tls
+status:
+  loadBalancer:
+    ingress:
+      - hostname: >-	
+          k8s-ingress-ingress-70d02f223c-4d2a3b04886140f1b961a25856211401.ke.kr-central-2.kakaocloud.com
