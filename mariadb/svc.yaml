@@ -25,3 +25,4 @@ spec:
   selector:
     app: mariadb
     role: slave
+  

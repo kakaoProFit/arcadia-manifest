@@ -25,13 +25,21 @@ spec:
           value: profit
         - name: MYSQL_REPLICATION_PASSWORD
           value: vmfhvlt!
-        - name: MYSQL_MASTER_SERVICE_HOST
+        - name: MYSQL_MASTER_HOST
           value: mariadb-master
+        - name: MYSQL_MASTER_PORT
+          value: "3306"
+        - name: SERVER_ID
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
         volumeMounts:
         - name: config
           mountPath: /etc/mysql/conf.d
         - name: mariadb-slave
           mountPath: /var/lib/mysql
+        - name: init-replication
+          mountPath: /docker-entrypoint-initdb.d
       volumes:
       - name: config
         configMap:
@@ -39,6 +47,15 @@ spec:
           items:
           - key: slave.cnf
             path: slave.cnf
+      - name: init-replication
+        configMap:
+          name: mariadb-init-replication
+      - name: scripts
+        configMap:
+          name: mariadb-init-replication
+          items:
+          - key: set-server-id.sh
+            path: set-server-id.sh
   volumeClaimTemplates:
   - metadata:
       name: mariadb-slave
