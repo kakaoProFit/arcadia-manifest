@@ -16,7 +16,7 @@ spec:
         app: arcadia-api
     spec:
       containers:
-        - image: gcu-profit-dev.kr-central-2.kcr.dev/arcadia-nextjs/sunoapi:7
+        - image: gcu-profit-dev.kr-central-2.kcr.dev/arcadia-nextjs/sunoapi:8
           name: sunoapi
           ports:
             - containerPort: 3000
